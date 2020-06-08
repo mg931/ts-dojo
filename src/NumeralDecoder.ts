@@ -12,9 +12,9 @@ const VALUES = {
 };
 
 /**
- * Convert numerals to numerical value
+ * Function to convert numeral to value
  */
-export default function decode(numerals: string) {
+export default function decode(numerals: string): number {
     let preNum: number;
 
     return numerals
@@ -27,22 +27,3 @@ export default function decode(numerals: string) {
         })
         .reduce((a, b) => a + b, 0);
 }
-
-/**
- * Class to convert numerals to values
- */
-// export default class NumeralDecoder {
-//     public decode(numerals: string): number {
-//         let preNum: number;
-
-//         return numerals
-//             .split('')
-//             .map(numeral => {
-//                 let num = VALUES[numeral];
-//                 let result = preNum < num ? num - preNum * 2 : num;
-//                 preNum = num;
-//                 return result;
-//             })
-//             .reduce((a, b) => a + b, 0);
-//     }
-// }
